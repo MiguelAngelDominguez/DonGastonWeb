@@ -1,0 +1,12 @@
+.logoIcon {
+    width: 4em;
+}
+
+.logoText {
+    font-size: 1.2em;
+    font-weight: 400;
+}
+
+.logoText_effect {
+    font-weight: bold;
+}

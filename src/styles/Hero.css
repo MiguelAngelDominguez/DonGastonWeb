@@ -1,0 +1,12 @@
+.heroContainer_div{
+    .heroContainer_div__logo{
+        width: 18em;
+        display: flex;
+        justify-content: center;
+        margin-top: 2rem;
+        img{
+            width: 100%;
+            max-width: 300px;
+        }
+    }
+}
