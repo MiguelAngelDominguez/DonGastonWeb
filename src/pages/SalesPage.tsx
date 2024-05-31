@@ -9,7 +9,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
-
+import Container from '@mui/material/Container';
 
 import getLPTheme from '../components/getLPTheme';
 
@@ -83,23 +83,27 @@ export default function SalesPage() {
 				title={["Nuestros", "Productos"]}
 				paragraph="Descubre el mejor café en 'Don Gastón', originario de Perú, donde la calidad y el sabor excepcional se encuentran en cada taza. Ven y disfruta de lo auténtico."
 				seeEmail={false}
-				srcImg = ""
+				srcImg=""
 			/>
-			<Box sx={{ bgcolor: 'background.default' }}>
-				<ProductGallery />
-				{/* <LogoCollection />
-				<Features />
-				<Divider />
-				<Testimonials />
-				<Divider />
-				<Highlights />
-				<Divider />
-				<Pricing />
-				<Divider />
-				<FAQ />
-				<Divider />
-				<Footer /> */}
-			</Box>
+			<ProductGallery />
+
+			{/* <Container
+				id="OurAchievements"
+				sx={{
+					pt: { xs: 4, sm: 12 },
+					pb: { xs: 8, sm: 16 },
+					position: 'relative',
+					display: 'flex',
+					flexDirection: 'column',
+					alignItems: 'center',
+					gap: { xs: 3, sm: 6 },
+				}}
+			>
+				<Box sx={{ bgcolor: 'background.default' }}>
+					<ProductGallery />
+				</Box>
+			</Container> */}
+
 			{/* <ToggleCustomTheme
 				showCustomTheme={showCustomTheme}
 				toggleCustomTheme={toggleCustomTheme}

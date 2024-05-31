@@ -727,6 +727,18 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
         defaultProps: {
           elevation: 0,
         },
+        styleOverrides:{
+          root: ({ theme }) => ({
+            padding: 0,
+            backgroundColor: 'hsl(0, 0%, 100%)',
+            border: `1px solid ${alpha(gray[200], 0.5)}`,
+            boxShadow: 'none',
+            ...theme.applyStyles('dark', {
+              backgroundColor: gray[900],
+              border: `1px solid ${alpha(gray[700], 0.3)}`,
+            }),
+          }),
+        }
       },
       MuiStack: {
         defaultProps: {

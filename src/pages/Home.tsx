@@ -14,6 +14,9 @@ import Hero from '../components/Hero';
 import AboutUs from '../components/AboutUs';
 import OurAchievements from '../components/OurAchievements';
 import ProductGallery from '../components/ProductGallery';
+import HowProduceCoffe from '../components/HowProduceCoffe';
+import Footer from '../components/Footer';
+import LogoCollection from '../components/LogoCollection';
 
 interface ToggleCustomThemeProps {
 	showCustomTheme: Boolean;
@@ -84,10 +87,13 @@ export default function Home() {
 			/>
 			<Box sx={{ bgcolor: 'background.default' }}>
 				<Divider />
+				<LogoCollection />
+				<Divider />
 				<AboutUs />
 				<Divider />
 				<OurAchievements />
 				<Divider />
+				<HowProduceCoffe />
 				<Hero
 					title={["Nuestros", "Productos"]}
 					paragraph="Descubre el mejor café en 'Don Gastón', originario de Perú, donde la calidad y el sabor excepcional se encuentran en cada taza. Ven y disfruta de lo auténtico."
@@ -95,6 +101,7 @@ export default function Home() {
 					srcImg=""
 				/>
 				<ProductGallery />
+				<Footer />
 				{/* <LogoCollection />
 				<Features />
 				<Divider />

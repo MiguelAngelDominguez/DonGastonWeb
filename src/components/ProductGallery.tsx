@@ -5,6 +5,7 @@ import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Unstable_Grid2';
+import Container from '@mui/material/Container';
 
 import ProductCard from './ProductCard';
 
@@ -59,8 +60,15 @@ export default function ProductGallery() {
     // id, created_at, name, price, content_measure, stock, description, image
 
     return (
-        <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }}>
+        <Container
+            id=""
+            sx={{
+                pt: { xs: 4, sm: 12 },
+                pb: { xs: 8, sm: 16 },
+                gap: { xs: 3, sm: 6 },
+            }}
+        >
+            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 2, sm: 8, md: 12 }} justifyContent={'center'}>
                 {/* {Array.from(Array(12)).map((_, index) => (
                     <Grid xs={2} sm={4} md={4} key={index}>
                         <Item>
@@ -71,21 +79,20 @@ export default function ProductGallery() {
                 {
                     products.map((product: any) => {
                         return (
-                            <Grid xs={2} sm={4} md={4}>
-                                <Item>
-                                    <ProductCard
-                                        nameProduct={product.name}
-                                        price={product.price}
-                                        content_measure={product.content_measure}
-                                        stock={product.stock}
-                                        urlImage={product.image}
-                                    />
-                                </Item>
+                            <Grid>
+                                <ProductCard
+                                    nameProduct={product.name}
+                                    price={product.price}
+                                    content_measure={product.content_measure}
+                                    stock={product.stock}
+                                    urlImage={product.image}
+                                />
                             </Grid>
                         );
                     })
                 }
             </Grid>
-        </Box>
+        </Container>
+
     );
 }
