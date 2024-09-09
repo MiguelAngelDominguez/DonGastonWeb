@@ -19,7 +19,7 @@ export default function HowProduceCoffe() {
 
     return (
         <Container
-            id="faq"
+            id="elaborate"
             sx={{
                 pt: { xs: 4, sm: 12 },
                 pb: { xs: 8, sm: 16 },

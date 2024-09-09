@@ -64,7 +64,7 @@ export default function OurAchievements() {
 
 	return (
 		<Container
-			id="OurAchievements"
+			id="achievements"
 			sx={{
 				pt: { xs: 4, sm: 12 },
 				pb: { xs: 8, sm: 16 },
@@ -72,13 +72,14 @@ export default function OurAchievements() {
 				display: 'flex',
 				flexDirection: 'column',
 				alignItems: 'center',
+				justifyContent: 'center',
 				gap: { xs: 3, sm: 6 },
 			}}
 		>
 			<Box
 				sx={{
 					width: { sm: '100%', md: '60%' },
-					textAlign: { sm: 'left', md: 'center' },
+					textAlign: 'center',
 				}}
 			>
 				<Typography component="h2" variant="h4" color="text.primary">
@@ -89,7 +90,7 @@ export default function OurAchievements() {
 				</Typography>
 			</Box>
 			<Box sx={{ flexGrow: 1 }}>
-				<Grid container spacing={4} columns={{ xs: 2, sm: 8, md: 12 }}>
+				<Grid container spacing={4} columns={{ xs: 2, sm: 8, md: 12 }} justifyContent="center">
 					{/* {Array.from(Array(2)).map((_, index) => (
 						<Grid xs={6} key={index}>
 							<CardImagePost />

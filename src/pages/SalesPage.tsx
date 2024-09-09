@@ -17,6 +17,7 @@ import AppAppBar from '../components/AppAppBar';
 import ProductGallery from '../components/ProductGallery';
 import Hero from '../components/Hero';
 import Pricing from '../components/Pricing';
+import Footer from '../components/Footer';
 
 interface ToggleCustomThemeProps {
 	showCustomTheme: Boolean;
@@ -86,7 +87,7 @@ export default function SalesPage() {
 				srcImg=""
 			/>
 			<ProductGallery />
-
+			<Footer />
 			{/* <Container
 				id="OurAchievements"
 				sx={{

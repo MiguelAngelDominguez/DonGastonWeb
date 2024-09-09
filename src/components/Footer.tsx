@@ -12,8 +12,8 @@ import { CssVarsProvider } from '@mui/joy/styles';
 
 import { visuallyHidden } from '@mui/utils';
 
-import FacebookIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/X';
 
 import SitemarkIcon from './SitemarkIcon';
@@ -59,14 +59,14 @@ export default function Footer() {
 					<Box sx={{ width: { xs: '100%', sm: '60%' } }}>
 						<SitemarkIcon />
 						<Typography variant="body2" fontWeight={600} gutterBottom sx={{ mt: 2 }}>
-							Join the newsletter
+							Regístrate para recibir noticias
 						</Typography>
 						<Typography variant="body2" color="text.secondary" mb={2}>
-							Subscribe for weekly updates. No spams ever!
+							Ingresa tu correo para recibir noticias y actualizaciones.
 						</Typography>
 						<Stack direction="row" spacing={1} useFlexGap>
 							<InputLabel htmlFor="email-newsletter" sx={visuallyHidden}>
-								Email
+								Correo electrónico
 							</InputLabel>
 							<TextField
 								id="email-newsletter"
@@ -74,15 +74,15 @@ export default function Footer() {
 								size="small"
 								variant="outlined"
 								fullWidth
-								aria-label="Enter your email address"
-								placeholder="Your email address"
+								aria-label="Ingresa tu correo electrónico"
+								placeholder="Tu correo electrónico"
 								inputProps={{
 									autoComplete: 'off',
-									'aria-label': 'Enter your email address',
+									'aria-label': 'Ingrese su correo electrónico',
 								}}
 							/>
 							<Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
-								Subscribe
+								Enviar
 							</Button>
 						</Stack>
 					</Box>
@@ -95,22 +95,16 @@ export default function Footer() {
 					}}
 				>
 					<Typography variant="body2" fontWeight="medium">
-						Product
+						Inicio
 					</Typography>
 					<Link color="text.secondary" variant="body2" href="#">
-						Features
+						¿Quiénes somos?
 					</Link>
 					<Link color="text.secondary" variant="body2" href="#">
-						Testimonials
+						Nuestros Logros
 					</Link>
 					<Link color="text.secondary" variant="body2" href="#">
-						Highlights
-					</Link>
-					<Link color="text.secondary" variant="body2" href="#">
-						Pricing
-					</Link>
-					<Link color="text.secondary" variant="body2" href="#">
-						FAQs
+						Nuestros Productos
 					</Link>
 				</Box>
 				<Box
@@ -121,36 +115,13 @@ export default function Footer() {
 					}}
 				>
 					<Typography variant="body2" fontWeight="medium">
-						Company
+						Compañía
 					</Typography>
 					<Link color="text.secondary" variant="body2" href="#">
-						About us
+						Sobre nosotros
 					</Link>
 					<Link color="text.secondary" variant="body2" href="#">
-						Careers
-					</Link>
-					<Link color="text.secondary" variant="body2" href="#">
-						Press
-					</Link>
-				</Box>
-				<Box
-					sx={{
-						display: { xs: 'none', sm: 'flex' },
-						flexDirection: 'column',
-						gap: 1,
-					}}
-				>
-					<Typography variant="body2" fontWeight="medium">
-						Legal
-					</Typography>
-					<Link color="text.secondary" variant="body2" href="#">
-						Terms
-					</Link>
-					<Link color="text.secondary" variant="body2" href="#">
-						Privacy
-					</Link>
-					<Link color="text.secondary" variant="body2" href="#">
-						Contact
+						Contacto
 					</Link>
 				</Box>
 			</Box>
@@ -166,13 +137,13 @@ export default function Footer() {
 			>
 				<div>
 					<Link color="text.secondary" variant="body2" href="#">
-						Privacy Policy
+						Politica de Privacidad
 					</Link>
 					<Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
 						&nbsp;•&nbsp;
 					</Typography>
 					<Link color="text.secondary" variant="body2" href="#">
-						Terms of Service
+						terminos y condiciones
 					</Link>
 					{/* <Copyright /> */}
 				</div>
@@ -187,27 +158,19 @@ export default function Footer() {
 				>
 					<IconButton
 						color="inherit"
-						href="https://github.com/mui"
-						aria-label="GitHub"
+						href="https://www.facebook.com/DonGastonsac"
+						aria-label="Facebook"
 						sx={{ alignSelf: 'center' }}
 					>
 						<FacebookIcon />
 					</IconButton>
 					<IconButton
 						color="inherit"
-						href="https://twitter.com/MaterialUI"
-						aria-label="X"
+						href="https://www.instagram.com/dongastonsac/"
+						aria-label="Instagram"
 						sx={{ alignSelf: 'center' }}
 					>
-						<TwitterIcon />
-					</IconButton>
-					<IconButton
-						color="inherit"
-						href="https://www.linkedin.com/company/mui/"
-						aria-label="LinkedIn"
-						sx={{ alignSelf: 'center' }}
-					>
-						<LinkedInIcon />
+						<InstagramIcon />
 					</IconButton>
 				</Stack>
 			</Box>

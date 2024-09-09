@@ -22,29 +22,29 @@ declare module '@mui/material/styles/createPalette' {
 const customTheme = createTheme();
 
 export const brand = {
-  50: 'hsl(210, 100%, 97%)',
-  100: 'hsl(210, 100%, 90%)',
-  200: 'hsl(210, 100%, 80%)',
-  300: 'hsl(210, 100%, 65%)',
-  400: 'hsl(210, 98%, 48%)',
-  500: 'hsl(210, 98%, 42%)',
-  600: 'hsl(210, 98%, 55%)',
-  700: 'hsl(210, 100%, 35%)',
-  800: 'hsl(210, 100%, 16%)',
-  900: 'hsl(210, 100%, 21%)',
+  50: 'hsl(45, 100%, 97%)', // dorado claro
+  100: 'hsl(45, 92%, 90%)',
+  200: 'hsl(45, 94%, 80%)',
+  300: 'hsl(45, 90%, 65%)',
+  400: 'hsl(45, 90%, 40%)',
+  500: 'hsl(45, 90%, 35%)', // dorado
+  600: 'hsl(45, 91%, 25%)',
+  700: 'hsl(45, 94%, 20%)',
+  800: 'hsl(45, 95%, 16%)',
+  900: 'hsl(45, 93%, 12%)', // dorado oscuro
 };
 
 export const gray = {
-  50: 'hsl(220, 60%, 99%)',
-  100: 'hsl(220, 35%, 94%)',
-  200: 'hsl(220, 35%, 88%)',
-  300: 'hsl(220, 25%, 80%)',
-  400: 'hsl(220, 20%, 65%)',
-  500: 'hsl(220, 20%, 42%)',
-  600: 'hsl(220, 25%, 35%)',
-  700: 'hsl(220, 25%, 25%)',
-  800: 'hsl(220, 25%, 10%)',
-  900: 'hsl(220, 30%, 5%)',
+  50: 'hsl(30, 20%, 99%)', // marrón claro
+  100: 'hsl(30, 20%, 94%)',
+  200: 'hsl(30, 20%, 88%)',
+  300: 'hsl(30, 20%, 80%)',
+  400: 'hsl(30, 20%, 65%)',
+  500: 'hsl(30, 20%, 42%)',
+  600: 'hsl(30, 20%, 35%)',
+  700: 'hsl(30, 20%, 25%)',
+  800: 'hsl(30, 20%, 10%)',
+  900: 'hsl(30, 20%, 5%)', // marrón oscuro
 };
 
 export const green = {
@@ -93,9 +93,9 @@ const getDesignTokens = (mode: PaletteMode) => ({
       light: brand[200],
       main: brand[500],
       dark: brand[800],
-      contrastText: brand[50],
-      ...(mode === 'dark' && {
-        contrastText: brand[50],
+      contrastText: 'hsl(0, 0%, 100%)', // blanco
+      ...(mode === 'light' && {
+        contrastText: 'hsl(0, 0%, 100%)', // blanco
         light: brand[300],
         main: brand[400],
         dark: brand[800],
@@ -106,7 +106,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
       main: brand[300],
       dark: brand[600],
       contrastText: gray[50],
-      ...(mode === 'dark' && {
+      ...(mode === 'light' && {
         contrastText: brand[300],
         light: brand[500],
         main: brand[700],
@@ -117,7 +117,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
       light: orange[300],
       main: orange[400],
       dark: orange[800],
-      ...(mode === 'dark' && {
+      ...(mode === 'light' && {
         light: orange[400],
         main: orange[500],
         dark: orange[700],
@@ -127,7 +127,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
       light: red[300],
       main: red[400],
       dark: red[800],
-      ...(mode === 'dark' && {
+      ...(mode === 'light' && {
         light: red[400],
         main: red[500],
         dark: red[700],
@@ -137,7 +137,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
       light: green[300],
       main: green[400],
       dark: green[800],
-      ...(mode === 'dark' && {
+      ...(mode === 'light' && {
         light: green[400],
         main: green[500],
         dark: green[700],
@@ -146,20 +146,20 @@ const getDesignTokens = (mode: PaletteMode) => ({
     grey: {
       ...gray,
     },
-    divider: mode === 'dark' ? alpha(gray[600], 0.3) : alpha(gray[300], 0.5),
+    divider: mode === 'light' ? alpha(gray[300], 0.5) : alpha(gray[600], 0.3),
     background: {
-      default: 'hsl(0, 0%, 100%)',
+      default: 'hsl(30, 20%, 5%)', // marrón oscuro
       paper: gray[100],
-      ...(mode === 'dark' && { default: 'hsl(220, 30%, 3%)', paper: gray[900] }),
+      ...(mode === 'light' && { default: 'hsl(30, 20%, 5%)', paper: gray[900] }), // marrón oscuro
     },
     text: {
       primary: gray[800],
       secondary: gray[600],
-      ...(mode === 'dark' && { primary: 'hsl(0, 0%, 100%)', secondary: gray[400] }),
+      ...(mode === 'light' && { primary: 'hsl(0, 0%, 100%)', secondary: gray[400] }), // blanco
     },
     action: {
       selected: `${alpha(brand[200], 0.2)}`,
-      ...(mode === 'dark' && {
+      ...(mode === 'light' && {
         selected: alpha(brand[800], 0.2),
       }),
     },
@@ -171,45 +171,56 @@ const getDesignTokens = (mode: PaletteMode) => ({
       fontWeight: 600,
       lineHeight: 1.2,
       letterSpacing: -0.5,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     h2: {
       fontSize: customTheme.typography.pxToRem(48),
       fontWeight: 600,
       lineHeight: 1.2,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     h3: {
       fontSize: customTheme.typography.pxToRem(42),
       lineHeight: 1.2,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     h4: {
       fontSize: customTheme.typography.pxToRem(36),
       fontWeight: 500,
       lineHeight: 1.5,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     h5: {
       fontSize: customTheme.typography.pxToRem(20),
       fontWeight: 600,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     h6: {
       fontSize: customTheme.typography.pxToRem(18),
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     subtitle1: {
       fontSize: customTheme.typography.pxToRem(18),
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     subtitle2: {
       fontSize: customTheme.typography.pxToRem(16),
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     body1: {
       fontSize: customTheme.typography.pxToRem(15),
       fontWeight: 400,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     body2: {
       fontSize: customTheme.typography.pxToRem(14),
       fontWeight: 400,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
     caption: {
       fontSize: customTheme.typography.pxToRem(12),
       fontWeight: 400,
+      color: 'hsl(0, 0%, 100%)', // blanco
     },
   },
   shape: {
@@ -230,7 +241,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
           root: ({ theme }) => ({
             padding: 8,
             overflow: 'clip',
-            backgroundColor: 'hsl(0, 0%, 100%)',
+            backgroundColor: 'hsl(30, 20%, 5%)', // marrón oscuro
             border: '1px solid',
             borderColor: gray[100],
             ':before': {
@@ -244,7 +255,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
               borderBottomLeftRadius: 10,
               borderBottomRightRadius: 10,
             },
-            ...theme.applyStyles('dark', {
+            ...theme.applyStyles('light', {
               backgroundColor: gray[900],
               borderColor: gray[800],
             }),
@@ -258,7 +269,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
             borderRadius: 8,
             '&:hover': { backgroundColor: gray[100] },
             '&:focus-visible': { backgroundColor: 'transparent' },
-            ...theme.applyStyles('dark', {
+            ...theme.applyStyles('light', {
               '&:hover': { backgroundColor: gray[800] },
             }),
           }),
@@ -317,7 +328,8 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
                 style: {
                   color: 'white',
                   backgroundColor: brand[300],
-                  backgroundImage: `linear-gradient(to bottom, ${alpha(brand[400], 0.8)}, ${brand[500]})`,
+                  backgroundImage: `linear-gradient(to bottom, ${alpha(brand[400], 0.8)}, ${brand[500]}), linear-gradient(135deg, rgba(255, 255, 255, 0.3) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 75%, transparent 75%, transparent)`,
+                  backgroundSize: '4px 4px',
                   boxShadow: `inset 0 2px 0 ${alpha(brand[200], 0.2)}, inset 0 -2px 0 ${alpha(brand[700], 0.4)}`,
                   border: `1px solid ${brand[500]}`,
                   '&:hover': {
@@ -349,7 +361,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
                     boxShadow: `inset 0 2.5px 0 ${alpha(brand[400], 0.2)}`,
                     backgroundImage: 'none',
                   },
-                  ...theme.applyStyles('dark', {
+                  ...theme.applyStyles('light', {
                     color: brand[200],
                     backgroundColor: alpha(brand[600], 0.1),
                     borderColor: alpha(brand[600], 0.6),
@@ -386,7 +398,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
                     boxShadow: `inset 0 2.5px 0 ${alpha(gray[400], 0.2)}`,
                     backgroundImage: 'none',
                   },
-                  ...theme.applyStyles('dark', {
+                  ...theme.applyStyles('light', {
                     color: gray[300],
                     backgroundColor: alpha(gray[600], 0.1),
                     borderColor: alpha(gray[700], 0.5),
@@ -414,7 +426,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
                   '&:hover': {
                     backgroundColor: alpha(brand[300], 0.3),
                   },
-                  ...theme.applyStyles('dark', {
+                  ...theme.applyStyles('light', {
                     color: brand[200],
                     '&:hover': {
                       backgroundColor: alpha(brand[700], 0.3),
@@ -432,7 +444,7 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
                   '&:hover': {
                     backgroundColor: alpha(gray[300], 0.3),
                   },
-                  ...theme.applyStyles('dark', {
+                  ...theme.applyStyles('light', {
                     color: gray[200],
                     '&:hover': {
                       backgroundColor: alpha(gray[700], 0.3),
@@ -524,9 +536,9 @@ export default function getLPTheme(mode: PaletteMode): ThemeOptions {
       MuiDivider: {
         styleOverrides: {
           root: ({ theme }) => ({
-            borderColor: `${alpha(gray[200], 0.8)}`,
+            borderColor: `${alpha(gray[700], 0.4)}`,
             ...theme.applyStyles('dark', {
-              borderColor: `${alpha(gray[700], 0.4)}`,
+              borderColor: `${alpha(gray[200], 0.8)}`,
             }),
           }),
         },

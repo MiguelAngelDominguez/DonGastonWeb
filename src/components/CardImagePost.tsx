@@ -20,7 +20,7 @@ export default function CardImagePost(
 ) {
     return (
         <CssVarsProvider>
-            <Card sx={{ minHeight: '400px', width: 350 }}>
+            <Card sx={{ minHeight: '400px', width: 350, margin: '0 auto' }} >
                 <CardCover>
                     <img
                         src={srcImg}

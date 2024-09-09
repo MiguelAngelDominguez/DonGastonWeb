@@ -54,7 +54,7 @@ export default function Hero(
 ) {
 	return (
 		<Box
-			id="hero"
+			id="main"
 			sx={(theme) => ({
 				width: '100%',
 				backgroundImage:
@@ -122,7 +122,7 @@ export default function Hero(
 					{
 						seeEmail ? (
 							<>
-								<Stack
+								{/* <Stack
 									direction={{ xs: 'column', sm: 'row' }}
 									spacing={1}
 									useFlexGap
@@ -153,7 +153,7 @@ export default function Hero(
 										Términos y condiciones.
 									</Link>
 									.
-								</Typography>
+								</Typography> */}
 							</>
 						) : null
 					}
